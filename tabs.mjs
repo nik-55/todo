@@ -1,4 +1,4 @@
-import { set, ref, update, database, onValue } from "./database.mjs"
+import { set, ref, update, database, onValue, auth } from "./database.mjs"
 
 let addtask = document.getElementsByClassName('addtask')[0];
 let todolist_p = document.getElementById("todolist_p");
@@ -60,7 +60,7 @@ function taskbutton(event) {
 
     if (target.classList[0] === "remove") {
         console.log(target.value);
-        set(ref(database, 'todos/' + "nikhil/" + target.value), {
+        set(ref(database, 'todos/' + auth.currentUser.uid + "/" + target.value), {
             description: null,
             time: null,
             remove: null,
@@ -69,7 +69,7 @@ function taskbutton(event) {
         document.location.reload(true);
     }
     else if (target.classList[0] === "done") {
-        update(ref(database, 'todos/nikhil/' + target.value), {
+        update(ref(database, 'todos/' + auth.currentUser.uid + '/' + target.value), {
             done: true
         })
         document.location.reload(true);
@@ -91,20 +91,21 @@ function taskbutton(event) {
 
             bupdate.addEventListener("click", () => {
                 let time = tupdate.value;
-                if(time!==""){
-                update(ref(database, 'todos/nikhil/' + target.value), {
-                    tasktime: time
-                })
-                tupdate.value = ""
-                alert("Rescheduled");
-                document.location.reload(true); }
+                if (time !== "") {
+                    update(ref(database, 'todos/' + auth.currentUser.uid + '/' + target.value), {
+                        tasktime: time
+                    })
+                    tupdate.value = ""
+                    alert("Rescheduled");
+                    document.location.reload(true);
+                }
                 else alert("Field Cannot be left Empty");
-            }) 
+            })
 
         }
         else {
             target.classList.remove("active");
-    
+
             ptodo.removeChild(ptodo.lastChild);
             ptodo.removeChild(ptodo.lastChild);
         }
