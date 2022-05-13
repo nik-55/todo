@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+   
+    <script type="module" src="./index.mjs"></script>
+    <script type="module" src="./tabs.mjs"></script>
+
+    <title>Todo</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><button class="fa-solid fa-plus" id="add-icon"></button></li>
+                <li><button id="alltab">All</button></li>
+                <li><button id="todotab">Todos</button></li>
+                <li><button id="completedtab">Completed</button></li>
+                <li><button id="missedtab">Missed</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="loader" id="loader"></div>
+
+    <div> 
+        <div class="addtask" style= "display : none">
+        <input placeholder="Todo Tasks" id="taskinput" autocomplete="off">
+        <input id="tasktime" type="datetime-local">
+        <button id="add-btn">Save</button>
+    </div>
+</div>
+   
+
+    <div class="todo-container">
+        <ul id="todolist_p" class="pending"></ul>
+        <ul id="todolist_m" class="missed"></ul>
+        <ul id="todolist_d" class="completed"></ul>
+    </div>
+
+</body>
+
+</html>
