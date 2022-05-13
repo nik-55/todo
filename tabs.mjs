@@ -76,23 +76,35 @@ function taskbutton(event) {
     }
 
     else if (target.classList[0] === "edit") {
-        const tupdate = document.createElement('input');
-        tupdate.setAttribute("type", "datetime-local");
 
-        const bupdate = document.createElement('button');
-        ptodo.appendChild(tupdate);
-        ptodo.appendChild(bupdate);
-        bupdate.innerText = "save";
 
-        bupdate.addEventListener("click", () => {
-            let time = tupdate.value;
-            update(ref(database, 'todos/nikhil/' + target.value), {
-                tasktime: time
+        if (target.classList.length === 3) {
+            const tupdate = document.createElement('input');
+            tupdate.setAttribute("type", "datetime-local");
+
+            const bupdate = document.createElement('button');
+
+            ptodo.appendChild(tupdate);
+            ptodo.appendChild(bupdate);
+            bupdate.innerText = "save";
+            target.classList.add("active");
+
+            bupdate.addEventListener("click", () => {
+                let time = tupdate.value;
+                update(ref(database, 'todos/nikhil/' + target.value), {
+                    tasktime: time
+                })
+                tupdate.value = ""
+                alert("Rescheduled");
+                document.location.reload(true);
             })
-            tupdate.value = ""
-            alert("Rescheduled");
-            document.location.reload(true);
-        })
+        }
+        else {
+            target.classList.remove("active");
+    
+            ptodo.removeChild(ptodo.lastChild);
+            ptodo.removeChild(ptodo.lastChild);
+        }
 
     }
 
