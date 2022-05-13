@@ -17,7 +17,8 @@ document.getElementById('add-btn').addEventListener("click", () => {
     });
 
     taskinput.value = '';
-    tasktime.value = ''
+    tasktime.value = '';
+    document.location.reload(true);
 })
 
 
