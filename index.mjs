@@ -6,7 +6,7 @@ document.getElementById('add-btn').addEventListener("click", () => {
     let dateTime = time();
     let taskinput = document.getElementById('taskinput');
     let tasktime = document.getElementById('tasktime');
-
+    if(taskinput.value!==""&&tasktime.value!==""){
     console.log("Reached");
     set(ref(database, 'todos/' + "nikhil/" + dateTime), {
         description: taskinput.value,
@@ -18,7 +18,9 @@ document.getElementById('add-btn').addEventListener("click", () => {
 
     taskinput.value = '';
     tasktime.value = '';
-    document.location.reload(true);
+    document.location.reload(true); }
+
+    else alert("Field Cannot be left Empty");
 })
 
 

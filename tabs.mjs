@@ -91,13 +91,16 @@ function taskbutton(event) {
 
             bupdate.addEventListener("click", () => {
                 let time = tupdate.value;
+                if(time!==""){
                 update(ref(database, 'todos/nikhil/' + target.value), {
                     tasktime: time
                 })
                 tupdate.value = ""
                 alert("Rescheduled");
-                document.location.reload(true);
-            })
+                document.location.reload(true); }
+                else alert("Field Cannot be left Empty");
+            }) 
+
         }
         else {
             target.classList.remove("active");
