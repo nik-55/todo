@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
     <script type="module" src="../src/index.mjs"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
     <title>Todo</title>
 </head>
@@ -30,7 +31,7 @@
             </nav>
         </header>
 
-    <img src="../public/images/loading.gif" id="loader">
+        <img src="../public/images/loading.gif" id="loader">
 
         <div>
             <div class="addtask" style="display : none">
@@ -47,6 +48,7 @@
             <ul id="todolist_d" class="completed"></ul>
         </div>
 
+        <div id="piechart" style="display: none;"></div>
     </div>
     <div id="loggedout" style="display: none">
         <div id="auth">

@@ -5,13 +5,14 @@ let todolist_p = document.getElementById("todolist_p");
 let todolist_m = document.getElementById("todolist_m");
 let todolist_d = document.getElementById("todolist_d");
 let add_icon = document.getElementById("add-icon");
+let piechart = document.getElementById("piechart");
 
 document.getElementById('alltab').addEventListener("click", () => {
     addtask.style.display = "none";
     todolist_p.style.display = "";
     todolist_m.style.display = "";
     todolist_d.style.display = "";
-
+    piechart.style.display = "none";
 })
 
 document.getElementById('todotab').addEventListener("click", () => {
@@ -19,7 +20,7 @@ document.getElementById('todotab').addEventListener("click", () => {
 
     addtask.style.display = "none";
     todolist_p.style.display = "";
-
+    piechart.style.display = "none";
     todolist_m.style.display = "none";
     todolist_d.style.display = "none";
 
@@ -31,6 +32,7 @@ document.getElementById('missedtab').addEventListener("click", () => {
     todolist_p.style.display = "none";
     todolist_m.style.display = "";
     todolist_d.style.display = "none";
+    piechart.style.display = "none";
 });
 
 document.getElementById('completedtab').addEventListener("click", () => {
@@ -39,6 +41,7 @@ document.getElementById('completedtab').addEventListener("click", () => {
     todolist_p.style.display = "none";
     todolist_m.style.display = "none";
     todolist_d.style.display = "";
+    piechart.style.display = "none";
 })
 
 
@@ -48,6 +51,16 @@ add_icon.addEventListener("click", () => {
     todolist_p.style.display = "none";
     todolist_m.style.display = "none";
     todolist_d.style.display = "none";
+    piechart.style.display = "none";
+})
+
+
+document.getElementById("loggedinemail").addEventListener("click", () => {
+    addtask.style.display = "none";
+    todolist_p.style.display = "none";
+    todolist_m.style.display = "none";
+    todolist_d.style.display = "none";
+    piechart.style.display = "";
 })
 
 
@@ -113,3 +126,4 @@ function taskbutton(event) {
     }
 
 }
+

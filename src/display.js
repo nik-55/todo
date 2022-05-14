@@ -33,7 +33,7 @@ onAuthStateChanged(auth, (user) => {
     if (user) {
         document.getElementById('loggedin').style.display = "";
         document.getElementById('loggedout').style.display = "none";
-        document.getElementById("loggedinemail").innerText=auth.currentUser.email;
+        document.getElementById("loggedinemail").innerText = auth.currentUser.email;
         try {
             let dateTime = time();
             onValue(ref(database, 'todos/' + auth.currentUser.uid), (snapshot) => {

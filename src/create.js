@@ -36,14 +36,24 @@ function create(nclass, i, isdone, isremove, isedit, aparent) {
     nparent.appendChild(tododiv_c);
 }
 
+let pcount = 0, mcount = 0, dcount = 0;
 let timeout = () => setTimeout(() => {
 
     for (let i = 0; i < arr.length; i++) {
-        if (!arr[i].done && !arr[i].missed) create("tododiv_p", i, true, true, true, "todolist_p");
-
-        if (arr[i].missed) create("tododiv_m", i, false, false, false, "todolist_m");
-        if (arr[i].done) create("tododiv_d", i, false, false, false, "todolist_d");
+        if (!arr[i].done && !arr[i].missed) {
+            create("tododiv_p", i, true, true, true, "todolist_p");
+            pcount++;
+        }
+        if (arr[i].missed) {
+            create("tododiv_m", i, false, false, false, "todolist_m");
+            mcount++;
+        }
+        if (arr[i].done) {
+            create("tododiv_d", i, false, false, false, "todolist_d");
+            dcount++;
+        }
     }
 }
     , 3000);
-export { timeout };
+
+export { timeout, pcount, mcount, dcount };
