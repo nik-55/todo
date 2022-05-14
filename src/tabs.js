@@ -1,4 +1,4 @@
-import { set, ref, update, database, onValue, auth } from "./database.mjs"
+import { set, ref, update, database, auth } from "./database.js"
 
 let addtask = document.getElementsByClassName('addtask')[0];
 let todolist_p = document.getElementById("todolist_p");

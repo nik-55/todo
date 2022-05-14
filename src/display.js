@@ -1,7 +1,6 @@
-import { database, set, ref, update, onValue, auth, onAuthStateChanged } from "./database.mjs"
-import { time, loadtimeout } from "./extra.mjs";
-import { timeout } from "./create.mjs";
-import "./authenciation.js";
+import { database, set, ref, update, onValue, auth, onAuthStateChanged } from "./database.js"
+import { time, loadtimeout } from "./extra.js";
+import { timeout } from "./create.js";
 
 document.getElementById('add-btn').addEventListener("click", () => {
     let dateTime = time();

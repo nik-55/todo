@@ -1,4 +1,4 @@
-import { arr } from "./index.mjs";
+import { arr } from "./display.js";
 
 export function time(){
     var today = new Date();
@@ -9,8 +9,8 @@ export function time(){
 }
 
 let loadtimeout=()=>setTimeout(()=>{
-    document.getElementById("loader").classList.remove("loader");
-},2900);
+    document.getElementById("loader").style.display="none";
+},2990);
 
 function tstring(i,isdone){
     let nt=(new Date(arr[i].tasktime))-new Date(time());

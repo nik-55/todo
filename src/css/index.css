@@ -31,11 +31,6 @@
     height: 30px;
 }
 
-.completed {
-    background-color: aquamarine;
-    opacity: 70%;
-}
-
 .completed div {
     display: flex;
 }
@@ -44,10 +39,7 @@
     flex: 1;
 }
 
-.missed {
-    background-color: rgb(255, 174, 174);
-    opacity: 70%;
-}
+
 
 .missed div {
     display: flex;
@@ -58,7 +50,6 @@
 }
 
 .pending div {
-    background-color: aqua;
     display: flex;
 }
 
@@ -70,28 +61,7 @@ li {
     list-style: none;
 }
 
-.loader {
-    border: 16px solid #f3f3f3;
-    /* Light grey */
-    border-top: 16px solid #3498db;
-    /* Blue */
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 2s linear infinite;
-    margin-top: 15%;
-    margin-left: 40%;
-}
 
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
 
 button {
     cursor: pointer;
@@ -110,4 +80,25 @@ button {
     justify-content: center;
     justify-items: center;
     margin: 100px 100px;
+}
+
+#loader{
+    margin-top: 10%;
+    margin-left: 40%;
+}
+
+.tododiv_d{
+    background-color: greenyellow;
+}
+
+.tododiv_p{
+    background-color: rgb(5, 226, 255);
+}
+
+.tododiv_m{
+    background-color: rgb(255, 125, 164);
+}
+
+.tododiv_d:hover , .tododiv_p:hover , .tododiv_m :hover{
+     background-color: antiquewhite;
 }
