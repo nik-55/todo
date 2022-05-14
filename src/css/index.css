@@ -102,3 +102,11 @@ button {
 .tododiv_d:hover , .tododiv_p:hover , .tododiv_m :hover{
      background-color: antiquewhite;
 }
+
+.completed,.missed{
+    margin-top: 100px;
+}
+
+.pending{
+    margin-top: 90px;
+}
